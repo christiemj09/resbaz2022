@@ -13,6 +13,7 @@ format:
 theme:
   light: flatly
   dark: darkly
+toc: true
 ---
 
 :::{.callout-tip}
@@ -32,25 +33,27 @@ theme:
 
 # Introduction
 
-:::{.callout-tip}
-# Markdown exercise
+## Sub-heading
 
-- Check out [Quarto's markdown guide](https://quarto.org/docs/authoring/markdown-basics.html)
+- list item 1
 
-- and the [biostats guide to writing (equations section)](https://biostats-r.github.io/biostats/quarto/04-figures-tables.html#equations)
+- list item 2
 
-In the template Introduction section take 3-4 minutes to write:
+$\sqrt{4} = 2$
 
-- a sub-heading under the introduction
+@chamberlin1897 says to use multiple working hypotheses.
 
-- a list
+You can include code blocks that execute on render:
 
-- and an equation (inline or as a block)
+```{r}
+6 * 7
+```
 
-- cite one of the articles in in existing `.bib` file using the `@`
-
-- remove this callout and render the document and hit the :heavy_check_mark: in zoom
-:::
+Here's some example code that isn't executed (specified with a code block execution option)
+```{r}
+#| eval: false
+mystery_function()
+```
 
 # Libraries {.unnumbered .unlisted}
 
@@ -74,7 +77,8 @@ If you want to use Python code check out the documentation [here](https://quarto
 
 
 ```{r Libraries}
-#| include: true
+#| echo: false
+#| output: false
 
 if (!require("pacman")) install.packages("pacman", repos="http://cran.r-project.org")
 pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
@@ -92,6 +96,21 @@ pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
   - Does not matter what they contain but feel free to blurb something in there
 
 - render the document and hit the :heavy_check_mark: in zoom
+
+::: {.panel-tabset}
+
+# tab 1
+
+Hello everybody
+
+# tab 2
+
+Thanks for coming
+
+# tab 3
+
+![caption](images/fixing_problems.png)
+
 :::
 
 # Images
